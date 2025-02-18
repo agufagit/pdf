@@ -20,7 +20,6 @@ import (
 //	string, a PDF string literal
 //	keyword, a PDF keyword
 //	name, a PDF name without the leading slash
-//
 type token interface{}
 
 // A name is a PDF name, without the leading slash.
@@ -92,7 +91,7 @@ func (b *buffer) reload() bool {
 			b.eof = true
 			return false
 		}
-		b.errorf("malformed PDF: reading at offset %d: %v", b.offset, err)
+		// b.errorf("malformed PDF: reading at offset %d: %v", b.offset, err)
 		return false
 	}
 	b.offset += int64(n)
